@@ -1,5 +1,5 @@
-# jenkins-slave-centos7-python
-CentOS 7 based Jenkins slave build node with git, pip, and nose
+# jenkins-slave-centos7-phantomjs
+CentOS 7 based Jenkins slave build node with PhantomJS 1.9.8
 
 For use with Jenkins Docker plugin.
 
