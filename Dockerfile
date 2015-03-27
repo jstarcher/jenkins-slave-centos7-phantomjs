@@ -19,10 +19,12 @@ RUN yum install -y java-1.7.0-openjdk
 # Install git
 RUN yum install -y git
 
-# Install pip and nose
-RUN yum -y install python-pip
-RUN pip install nose
-
+# Install phantomjs
+RUN yum -y install gcc gcc-c++ make flex bison gperf ruby \
+  openssl-devel freetype-devel fontconfig-devel libicu-devel sqlite-devel \
+  libpng-devel libjpeg-devel
+RUN cd /root/ && git clone git://github.com/ariya/phantomjs.git && \
+    cd /root/phantomjs && git checkout 1.9.8 && ./build.sh --confirm
 
 # Add user jenkins to the image
 RUN adduser jenkins
